@@ -48,6 +48,8 @@ support, leader sequences, Greek/German helper usage, or the Planck target.
 - [x] (2026-03-17 10:00Z) Deleted the unused Planck, leader, and mouse helper
       files and removed the unused leader/unicode module entries from
       `config/west.yml`.
+- [x] (2026-03-17 10:02Z) Corrected `readme.md` so it no longer documents the
+      deleted Planck, leader, and mouse features as active behavior.
 - [ ] Local build validation and keymap rendering remain undone. The user
       explicitly said local builds are not needed, so compilation is deferred
       rather than blocked.
@@ -127,6 +129,8 @@ the unused Planck, leader, mouse, and unicode-specific active scaffolding, but
 the result has not been compiled locally. The most important lesson from the
 comparison phase is that this work is best handled as a behavioral port onto
 the new repo's structure, not as a selective tweak to the current base keymap.
+The README has also been adjusted so it does not point readers at removed
+features.
 
 ## Context and Orientation
 

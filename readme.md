@@ -1,8 +1,9 @@
-# urob's zmk-config
+# zmk-config-v3
 
-This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
-configuration. It consists of a 34-keys base layout that is re-used for various
-boards of different sizes, including a Corneish Zen, Glove80 and Planck.
+This repository contains a personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
+configuration migrated onto urob's newer repo structure. It consists of a
+34-key base layout that is re-used for the active targets in this tree:
+Corneish Zen and Glove80.
 
 The configuration currently builds against `v0.3` of upstream ZMK, extended by various [ZMK
 modules](https://github.com/search?q=topic%3Azmk-module+fork%3Atrue+owner%3Aurob+&type=repositories).
@@ -11,11 +12,12 @@ manifest](https://github.com/urob/zmk-config/blob/main/config/west.yml).
 
 ## Highlights
 
+- Migrated personal alpha layout and board positions from an older config
 - ["Timeless" homerow mods](#timeless-homerow-mods)
+- Limited homerow mods centered on custom `hrm_hp` behaviors instead of full alpha HRMs
 - Combos instead of symbol layer
-- Auto-toggle off numbers and mouse layers
-- Magic thumb quadrupling as Repeat/Sticky-shift/Capsword/Shift
-- Leader key sequences for Unicode input and system commands
+- Smart numbers plus dedicated thumb behaviors
+- Mac-specific shortcuts including `app_swapper`, `spotlight`, and `hyper_ret`
 - Arrow-cluster doubles as <kbd>home</kbd>, <kbd>end</kbd>, <kbd>begin/end of document</kbd> on
   long-press
 - Shifted actions that make sense: <kbd>, ↦ ;</kbd>, <kbd>. ↦ :</kbd> and <kbd>? ↦ !</kbd>
@@ -226,16 +228,13 @@ I am using [Nick Conway](https://github.com/nickconway)'s fantastic
 [tri-state](https://github.com/zmkfirmware/zmk/pull/1366) behavior for a
 one-handed Alt-Tab switcher (`PWin` and `NWin`).
 
-##### Leader key
+##### Mac-specific shortcuts
 
-I am using my own implementation of a
-[Leader key](https://github.com/urob/zmk-leader-key) (activated by comboing
-<kbd>S</kbd> + <kbd>T</kbd>) to bind various behaviors to my layout without
-reserving dedicated keys. Currently, I am using them to bind German Umlauts,
-Greek letters for math usage, and various system commands (e.g., to toggle
-Bluetooth). See
-[`leader.dtsi`](https://github.com/urob/zmk-config/blob/main/config/leader.dtsi)
-for the full list of leader key sequences.
+This migrated config keeps the macOS shortcuts from the older setup, including
+`spotlight`, `app_swapper`, desktop management helpers, and a `hyper_ret`
+thumb key. These are preserved because they are part of the everyday workflow
+for this layout, even though other upstream defaults such as leader sequences
+and mouse support were intentionally removed during migration.
 
 ## Local build environment
 
