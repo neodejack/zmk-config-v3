@@ -45,6 +45,9 @@ support, leader sequences, Greek/German helper usage, or the Planck target.
 - [x] (2026-03-17 09:59Z) Removed active mouse support and the Planck target
       from the live configuration and build matrix. Unused helper files remain
       on disk but are not part of the active config.
+- [x] (2026-03-17 10:00Z) Deleted the unused Planck, leader, and mouse helper
+      files and removed the unused leader/unicode module entries from
+      `config/west.yml`.
 - [ ] Local build validation and keymap rendering remain undone. The user
       explicitly said local builds are not needed, so compilation is deferred
       rather than blocked.
@@ -112,14 +115,18 @@ support, leader sequences, Greek/German helper usage, or the Planck target.
   said local builds are not needed, and the plain shell lacks the expected
   build toolchain. Date/Author: 2026-03-17 / Codex
 
+- Decision: Remove unused helper files and west module entries instead of
+  merely leaving them dead in the tree. Rationale: The user explicitly said
+  those features are not needed, and deleting them makes the migrated config
+  easier to read and reason about. Date/Author: 2026-03-17 / Codex
+
 ## Outcomes & Retrospective
 
-The repository has now been migrated at the configuration level, but the result
-has not been compiled locally. The most important lesson from the comparison
-phase is that this work is best handled as a behavioral port onto the new repo's
-structure, not as a selective tweak to the current base keymap. The remaining
-question is how much dead-file cleanup to perform beyond the now-active Glove80
-and Corneish Zen configuration.
+The repository has now been migrated at the configuration level and stripped of
+the unused Planck, leader, mouse, and unicode-specific active scaffolding, but
+the result has not been compiled locally. The most important lesson from the
+comparison phase is that this work is best handled as a behavioral port onto
+the new repo's structure, not as a selective tweak to the current base keymap.
 
 ## Context and Orientation
 

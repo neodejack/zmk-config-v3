@@ -39,12 +39,8 @@ manifest:
       path: modules/zmk/auto-layer
     - name: zmk-helpers
       path: modules/zmk/helpers
-    - name: zmk-leader-key
-      path: modules/zmk/leader-key
     - name: zmk-tri-state
       path: modules/zmk/tri-state
-    - name: zmk-unicode
-      path: modules/zmk/unicode
 
     # Only source necessary Zephyr modules. Remove this entire section to restore
     # the default (needed for less common hardware).
