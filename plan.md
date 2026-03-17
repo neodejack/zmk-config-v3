@@ -35,19 +35,19 @@ support, leader sequences, Greek/German helper usage, or the Planck target.
       `hyper_ret`, and ignore Planck.
 - [x] (2026-03-17 09:49Z) Authored this ExecPlan in
       `/Users/zilizhang/code/zmk-config-v3/plan.md`.
-- [ ] Rework `config/base.keymap` so its active behavior matches the old user
-      config instead of the base repo defaults.
-- [ ] Rework `config/combos.dtsi` so combo timing and combo outputs match the
-      old user config, adjusted only where required for the current repository
-      structure.
-- [ ] Rebuild the board wrapper files for `config/corneish_zen.keymap` and
-      `config/glove80.keymap` so the physical key positions match the old user
+- [x] (2026-03-17 09:59Z) Reworked `config/base.keymap` so its active behavior
+      matches the old user config rather than the base repo defaults.
+- [x] (2026-03-17 09:59Z) Reworked `config/combos.dtsi` so combo timing and
+      combo outputs match the old user config.
+- [x] (2026-03-17 09:59Z) Rebuilt `config/corneish_zen.keymap` and
+      `config/glove80.keymap` so the physical key positions follow the old user
       setup on the new board targets.
-- [ ] Remove active mouse, leader, unicode, and Planck usage from the live
-      configuration and build matrix while keeping the repo in a clean,
-      buildable state.
-- [ ] Build all active targets, regenerate the keymap drawing if needed, and
-      record the results in this plan.
+- [x] (2026-03-17 09:59Z) Removed active mouse support and the Planck target
+      from the live configuration and build matrix. Unused helper files remain
+      on disk but are not part of the active config.
+- [ ] Local build validation and keymap rendering remain undone. The user
+      explicitly said local builds are not needed, so compilation is deferred
+      rather than blocked.
 
 ## Surprises & Discoveries
 
@@ -73,6 +73,11 @@ support, leader sequences, Greek/German helper usage, or the Planck target.
   `X_MH`, `X_RH`, and similar macros to inject board-specific keys, while this
   repo hardcodes board wrappers in `config/corneish_zen.keymap` and
   `config/glove80.keymap`.
+
+- Observation: The local shell in this workspace does not include the expected
+  firmware build toolchain. Evidence: `just list` fails because the local `yq`
+  does not understand the expression syntax used in the `Justfile`, and
+  `just init` fails immediately with `sh: west: command not found`.
 
 ## Decision Log
 
@@ -103,13 +108,18 @@ support, leader sequences, Greek/German helper usage, or the Planck target.
   required for behavioral scope. Deleting dead files is optional cleanup and
   should not block the core migration. Date/Author: 2026-03-17 / Codex
 
+- Decision: Skip local build validation for now. Rationale: The user explicitly
+  said local builds are not needed, and the plain shell lacks the expected
+  build toolchain. Date/Author: 2026-03-17 / Codex
+
 ## Outcomes & Retrospective
 
-The repository has not been migrated yet. The current outcome of this planning
-step is a concrete implementation path with the scope narrowed to the user's
-real hardware and behaviors. The most important lesson from the comparison phase
-is that this should be treated as a behavioral port onto the new repo's tooling,
-not as a selective tweak to the current base keymap.
+The repository has now been migrated at the configuration level, but the result
+has not been compiled locally. The most important lesson from the comparison
+phase is that this work is best handled as a behavioral port onto the new repo's
+structure, not as a selective tweak to the current base keymap. The remaining
+question is how much dead-file cleanup to perform beyond the now-active Glove80
+and Corneish Zen configuration.
 
 ## Context and Orientation
 
