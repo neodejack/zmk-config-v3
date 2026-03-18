@@ -15,6 +15,7 @@ parse_config:
     "&bt BT_SEL 1": BT 2
     "&bt BT_SEL 2": BT 3
     "&bt BT_SEL 3": BT 4
+    "&out OUT_USB": USB
 
     "&kp LC(INS)": Copy
     "&kp LC(X)": Cut
