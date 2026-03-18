@@ -5,7 +5,7 @@
                  LT RT                                                         \
                  LM RM                                                         \
                  LB RB                                                         \
-        &lt NAV TAB LH RH SMART_NUM                                              \
+        &lt NAV TAB LH RH &lt NUM TAB                                             \
     )
 
 #include "zmk-helpers/key-labels/36.h"

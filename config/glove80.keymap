@@ -9,7 +9,7 @@
         &kp ESC              LM                                            RM           &none         \
         &kp LC(LA(SPACE))    LB &none  &none  &none  &none  &none &none    RB           &none         \
         &none &none &none &none &none                                                               \
-        LH                   &lt NAV TAB SMART_NUM RH                            &kp LEFT &kp DOWN &kp UP &kp RIGHT &none)
+        LH                   &lt NAV TAB &lt NUM TAB RH                           &kp LEFT &kp DOWN &kp UP &kp RIGHT &none)
 
 #include "zmk-helpers/key-labels/glove80.h"
 #include "base.keymap"
