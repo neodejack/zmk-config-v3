@@ -67,8 +67,8 @@ MAKE_HRM(hmr_rpar_gt, &kp, &rpar_gt, KEYS_L THUMBS)
                hold-trigger-on-release;)
 
 MAKE_HRM_HOLD_PREFERRED(hrm_hp, &kp, &kp)
-MAKE_HRM_HOLD_PREFERRED(hrm_hp_colsl, &kp, &kp)
-MAKE_HRM_HOLD_PREFERRED(hrm_hp_eqmark, &kp, &kp)
+MAKE_HRM_HOLD_PREFERRED(hrm_hp_colsl, &kp, &colsl)
+MAKE_HRM_HOLD_PREFERRED(hrm_hp_eqmark, &kp, &eqmark)
 
 #include "combos.dtsi"
 
@@ -124,6 +124,7 @@ ZMK_TRI_STATE(app_swapper, bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
 
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &dot_inner_morph)
 SIMPLE_MORPH(dot_inner_morph, CTL, &kp COLON, &kp GREATER_THAN)
+SIMPLE_MORPH(colsl, SFT, &kp COLON, &kp SEMICOLON)
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
 SIMPLE_MORPH(eqmark, SFT, &kp EXCL, &kp QMARK)
 SIMPLE_MORPH(lpar_lt, CTL, &kp LPAR, &kp LT)
@@ -180,7 +181,7 @@ ZMK_BASE_LAYER(base,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp C         &kp I         &kp E         &kp A         &hrm_hp LGUI COMMA, &hrm_hp LGUI DOT &kp H &kp T &kp S &kp N ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp G         &kp X         &kp J         &kp K         &hrm_hp_colsl LALT COLON, &hrm_hp_eqmark LALT EXCL &kp R &kp M &kp F &kp P ,
+    &kp G         &kp X         &kp J         &kp K         &hrm_hp_colsl LALT 0    , &hrm_hp_eqmark LALT 0    &kp R &kp M &kp F &kp P ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
                                               &spc_morph    &kp LCTRL   ,   HYPER_RET     &smart_shft
 //                                          ╰─────────────┴─────────────╯ ╰─────────────┴─────────────╯
