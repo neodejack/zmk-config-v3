@@ -1,4 +1,5 @@
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/outputs.h>
 #include <zmk-helpers/helper.h> // Requires zmk-helpers module.
 #include <dt-bindings/zmk/keys.h>
 #ifdef CONFIG_WIRELESS
@@ -184,7 +185,7 @@ ZMK_BASE_LAYER(nav,
 //╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮ ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
     &kp LS(TAB)   &swapper      &kp UP        &app_swapper  ___         ,   &kp PG_UP     &kp LG(LS(N2)) &kp LG(LS(N3)) &kp LG(LS(N4)) NAV_BSPC ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-    &kp ESC       &kp LEFT      &kp DOWN      &kp RIGHT     &kp LC(LA(SPACE)), &kp PG_DN   &sk LGUI      &sk LCTRL     &sk LALT      &sk LSHFT ,
+    &out OUT_USB  &kp LEFT      &kp DOWN      &kp RIGHT     &kp LC(LA(SPACE)), &kp PG_DN   &sk LGUI      &sk LCTRL     &sk LALT      &sk LSHFT ,
 //├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
     &kp LG(Z)     &kp LG(X)     &kp LG(C)     &kp LG(V)     &kp LG(LS(V)), &kp INS       &kp TAB       &kp LT        &kp GT        ___ ,
 //╰─────────────┼─────────────┴─────────────┼─────────────┼─────────────┤ ├─────────────┼─────────────┼─────────────┴───────────────────────────╯
