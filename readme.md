@@ -3,7 +3,7 @@
 This repository contains a personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
 configuration migrated onto urob's newer repo structure. It consists of a
 34-key base layout that is re-used for the active targets in this tree:
-Corneish Zen and Glove80.
+Corne-compatible nice!nano splits and Glove80.
 
 The configuration currently builds against `v0.3` of upstream ZMK, extended by various [ZMK
 modules](https://github.com/search?q=topic%3Azmk-module+fork%3Atrue+owner%3Aurob+&type=repositories).
@@ -330,9 +330,9 @@ shield combinations listed there.
 
 To only build the firmware for a specific target, use `just build <target>`.
 This will build the firmware for all matching board and shield combinations. For
-instance, to build the firmware for my Corneish Zen, I can type
-`just build zen`, which builds both `corneish_zen_v2_left` and
-`corneish_zen_v2_right`. (`just list` shows all valid build targets.)
+instance, to build the firmware for my Chocofi-compatible Corne target, I can
+type `just build corne`, which builds both `corne_left` and `corne_right` on
+`nice_nano_v2`. (`just list` shows all valid build targets.)
 
 Additional arguments to `just build` are passed on to `west`. For instance, a
 pristine build can be triggered with `just build all -p`.

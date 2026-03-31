@@ -1,0 +1,14 @@
+#include "zmk-helpers/key-labels/36.h"
+
+#define ZMK_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH)                   \
+    ZMK_LAYER(                                                                  \
+        name,                                                                   \
+                 LT RT                                                          \
+                 LM RM                                                          \
+                 LB RB                                                          \
+        &lt NAV TAB LH RH &lt_num_tab NUM TAB                                      \
+    )
+
+#include "base.keymap"
+
+/{ chosen { zmk,physical-layout = &foostan_corne_5col_layout; }; };

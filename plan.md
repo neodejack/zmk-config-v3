@@ -86,11 +86,13 @@ support, leader sequences, Greek/German helper usage, or the Planck target.
 
 ## Decision Log
 
-- Decision: Use the base repo's active board target for the Corne side instead
-  of recreating the old `nice_nano_v2 + corne_left/right` target. Rationale: The
-  user explicitly approved using the base repo target. This keeps the migration
-  aligned with the current repo's maintained hardware definitions and CI layout.
-  Date/Author: 2026-03-17 / Codex
+- Decision: Restore the Corne side to `nice_nano_v2 + corne_left/right` with
+  `nice_view_adapter nice_view` instead of keeping `corneish_zen_v2_*`.
+  Rationale: The user is flashing this repo onto a Chocofi powered by
+  nice!nano, and the Corneish Zen board target produces firmware for different
+  hardware. Matching the working target from `zmk-config-fire` restores the
+  correct board/shield combination for the user's keyboard. Date/Author:
+  2026-03-31 / Codex
 
 - Decision: Do not carry mouse support into the migrated config. Rationale: The
   user does not use mouse support, and the old repo did not have it wired into
